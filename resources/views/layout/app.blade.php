@@ -3,17 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6F" crossorigin="anonymous">
-    <title>Document</title>
+
+    <title>Course Management System</title>
+
+    <!-- Bootstrap ONLY ONCE -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
+
 <body class="w-100 vh-100">
-    <h1 class="w-100 py-2 text-center bg-primary text-white">Course Management System</h1>
-    <div class="container">@if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+
+    <!-- Header -->
+    <h1 style="background-color:#5a3e2b;"
+        class="w-100 py-3 text-center text-white shadow">
+
+        Course Management System
+
+    </h1>
+
+    <div class="container mt-4">
+
+        <!-- Success Message -->
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show">
+
+                {{ session('success') }}
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="alert">
+                </button>
+
+            </div>
         @endif
+
+        <!-- Page Content -->
         @yield('content')
+
     </div>
+
+    <!-- Bootstrap JS (IMPORTANT for buttons, alerts) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
