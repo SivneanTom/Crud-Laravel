@@ -151,27 +151,12 @@
                                      class="rounded img-course">
                             </td>
 
-                            <td class="fw-semibold text-dark">
-                                {{ $cs->course_name }}
-                            </td>
-
+                            <td class="fw-semibold text-dark"> {{ $cs->course_name }}</td>
+                            <td>{{ $cs->path }}</td>
+                            <td class="fw-bold text-success">${{ $cs->price }}</td>
                             <td>
-                                {{ $cs->path }}
-                            </td>
-
-                            <td class="fw-bold text-success">
-                                ${{ $cs->price }}
-                            </td>
-
-                            <td>
-
                                 <!-- Edit Button -->
-                                <a href="{{ route('courses.edit', $cs->id) }}"
-                                   class="btn btn-edit btn-sm px-3 py-2 action-btn me-2">
-
-                                    Edit
-
-                                </a>
+                                <a href="{{ route('courses.edit', $cs->id) }}" class="btn btn-edit btn-sm px-3 py-2 action-btn me-2">Edit </a>
 
                                 <!-- Delete Button -->
                                 <form action="{{ route('courses.destroy', $cs->id) }}"
